@@ -1,0 +1,7 @@
+language: cpp
+os: linux
+dist: focal
+compiler: gcc
+script: 
+  - make
+
