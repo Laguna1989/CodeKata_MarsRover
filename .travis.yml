@@ -3,5 +3,7 @@ os: linux
 dist: focal
 compiler: gcc
 script: 
+  - cmake
   - make
+  - ./tests
 
