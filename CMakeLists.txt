@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 3.10)
 set (PROJECTNAME "CodeKataMarsRover") 
+project (${PROJECTNAME})
 
 set (CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_STANDARD 17)
@@ -44,10 +45,10 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 file(GLOB_RECURSE UNITTESTFILES tests/*)
-add_executable(tests ${UNITTESTFILES})
+add_executable(unittests ${UNITTESTFILES})
 
-target_link_libraries(tests gtest_main)
-target_link_libraries(tests gmock)
-target_link_libraries(tests MarsRover)
+target_link_libraries(unittests gtest_main)
+target_link_libraries(unittests gmock)
+target_link_libraries(unittests MarsRover)
 
 	
