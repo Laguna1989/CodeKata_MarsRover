@@ -6,7 +6,11 @@ set (CXX_STANDARD_REQUIRED ON)
 set (CMAKE_CXX_STANDARD 17)
 set (CXX_STANDARD 17)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+if(MSVC)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3 /EHsc")
+else()
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+endif()
 
 file(GLOB_RECURSE SOURCEFILES src/*)
 add_library(MarsRover ${SOURCEFILES})
